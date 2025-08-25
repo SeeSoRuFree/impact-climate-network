@@ -15,47 +15,42 @@ export default function About() {
         className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-black via-black/95 to-black backdrop-blur-md border-b border-transparent" 
         style={{
           backgroundImage: "linear-gradient(to right, rgba(0,255,136,0.1), rgba(0,255,255,0.1), rgba(50,88,238,0.1))", 
-          borderImage: "linear-gradient(to right, #00ff88, #00ffff, #3258ee) 1"
+          borderImage: "linear-gradient(to right, #FF4500, #00CED1, #1E90FF) 1"
         }}
       >
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="relative">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-r from-[#00ff88] to-[#00ffff] opacity-80 animate-pulse" />
-                <div className="absolute inset-0 w-10 h-10 rounded-full bg-gradient-to-r from-[#00ff88] to-[#00ffff] blur-lg opacity-50" />
-              </div>
-              <div className="font-bold text-lg">
-                <span className="text-white">2025</span>
-                <span className="text-[#00ff88] mx-1">×</span>
-                <span className="bg-gradient-to-r from-[#00ff88] via-[#00ffff] to-[#3258ee] bg-clip-text text-transparent">CLIMATE SUMMIT</span>
-              </div>
+              <Image
+                src="/images/summit logo wh.png"
+                alt="Climate Summit Logo"
+                width={200}
+                height={40}
+                className="h-8 w-auto"
+              />
             </Link>
 
             <div className="hidden md:flex items-center space-x-8">
-              <Link href="/" className="relative text-white/80 hover:text-[#00ff88] transition-all duration-300 group py-2">
+              <Link href="/" className="relative text-white/80 hover:text-[#FF4500] transition-all duration-300 group py-2">
                 Home
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#00ff88] to-[#00ffff] group-hover:w-full transition-all duration-300" />
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#FF4500] to-[#00CED1] group-hover:w-full transition-all duration-300" />
               </Link>
-              <Link href="/about" className="relative text-white/80 hover:text-[#00ff88] transition-all duration-300 group py-2">
+              <Link href="/about" className="relative text-white/80 hover:text-[#FF4500] transition-all duration-300 group py-2">
                 About
-                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-[#00ff88] to-[#00ffff] scale-x-100 transition-transform duration-300" />
+                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-[#FF4500] to-[#00CED1] scale-x-100 transition-transform duration-300" />
               </Link>
-              <Link href="/program" className="relative text-white/80 hover:text-[#00ff88] transition-all duration-300 group py-2">
+              <Link href="/program" className="relative text-white/80 hover:text-[#FF4500] transition-all duration-300 group py-2">
                 Program
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#00ff88] to-[#00ffff] group-hover:w-full transition-all duration-300" />
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#FF4500] to-[#00CED1] group-hover:w-full transition-all duration-300" />
               </Link>
-              <Link href="/speakers" className="relative text-white/80 hover:text-[#00ff88] transition-all duration-300 group py-2">
+              <Link href="/speakers" className="relative text-white/80 hover:text-[#FF4500] transition-all duration-300 group py-2">
                 Speakers
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#00ff88] to-[#00ffff] group-hover:w-full transition-all duration-300" />
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#FF4500] to-[#00CED1] group-hover:w-full transition-all duration-300" />
               </Link>
-              <button 
-                onClick={() => setShowComingSoon(true)}
-                className="relative text-white/80 hover:text-[#00ff88] transition-all duration-300 group py-2"
-              >
-                Past Events
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#00ff88] to-[#00ffff] group-hover:w-full transition-all duration-300" />
-              </button>
+              <Link href="/faq" className="relative text-white/80 hover:text-[#FF4500] transition-all duration-300 group py-2">
+                FAQ
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#FF4500] to-[#00CED1] group-hover:w-full transition-all duration-300" />
+              </Link>
             </div>
 
             <div className="flex items-center space-x-4">
@@ -103,9 +98,9 @@ export default function About() {
               <h2 className="text-3xl md:text-5xl font-bold mb-8">
                 <span className="text-white">Reprogramming the Future:</span>
                 <br />
-                <span className="text-[#00ff88]">Climate Tech</span>
-                <span className="text-[#3258ee] mx-3">×</span>
-                <span className="text-[#00ffff]">AI</span>
+                <span className="text-[#FF4500]">Climate Tech</span>
+                <span className="text-[#1E90FF] mx-3">×</span>
+                <span className="text-[#00CED1]">AI</span>
               </h2>
               <p className="text-[#cecece] text-lg leading-relaxed max-w-3xl mx-auto">
                 기후위기의 해결을 위한 기술 기반 시스템 전환 — 특히 AI 기술과 기후테크의 
@@ -126,7 +121,7 @@ export default function About() {
               viewport={{ once: true }}
             >
               <h3 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">
-                행사 목적
+                기후테크 스타트업 서밋은?
               </h3>
               
               <div className="grid md:grid-cols-2 gap-6">
@@ -135,7 +130,7 @@ export default function About() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: 0.1 }}
                   viewport={{ once: true }}
-                  className="p-6 bg-gradient-to-br from-[#00ff88]/10 to-transparent rounded-lg"
+                  className="p-6 bg-gradient-to-br from-[#FF4500]/10 to-transparent rounded-lg"
                 >
                   <div className="text-3xl mb-4">🎯</div>
                   <h4 className="text-lg font-bold text-white mb-2">혁신 생태계 조망</h4>
@@ -150,7 +145,7 @@ export default function About() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                   viewport={{ once: true }}
-                  className="p-6 bg-gradient-to-br from-[#00ffff]/10 to-transparent rounded-lg"
+                  className="p-6 bg-gradient-to-br from-[#00CED1]/10 to-transparent rounded-lg"
                 >
                   <div className="text-3xl mb-4">🤝</div>
                   <h4 className="text-lg font-bold text-white mb-2">AI for Climate Impact</h4>
@@ -165,7 +160,7 @@ export default function About() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: 0.3 }}
                   viewport={{ once: true }}
-                  className="p-6 bg-gradient-to-br from-[#3258ee]/10 to-transparent rounded-lg"
+                  className="p-6 bg-gradient-to-br from-[#1E90FF]/10 to-transparent rounded-lg"
                 >
                   <div className="text-3xl mb-4">🌏</div>
                   <h4 className="text-lg font-bold text-white mb-2">글로벌 네트워킹</h4>
@@ -180,7 +175,7 @@ export default function About() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: 0.4 }}
                   viewport={{ once: true }}
-                  className="p-6 bg-gradient-to-br from-[#00ff88]/10 to-transparent rounded-lg"
+                  className="p-6 bg-gradient-to-br from-[#FF4500]/10 to-transparent rounded-lg"
                 >
                   <div className="text-3xl mb-4">🚀</div>
                   <h4 className="text-lg font-bold text-white mb-2">실질적 전환</h4>
@@ -217,7 +212,7 @@ export default function About() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6 }}
                   viewport={{ once: true }}
-                  className="block p-6 border border-[#1d1d1f] rounded-lg bg-black/50 hover:border-[#00ff88] transition-all duration-300 cursor-pointer group"
+                  className="block p-6 border border-[#1d1d1f] rounded-lg bg-black/50 hover:border-[#FF4500] transition-all duration-300 cursor-pointer group"
                 >
                   <Image
                     src="/images/kakao-white.9938a19_1751608800882_cgvfo6.svg"
@@ -226,7 +221,7 @@ export default function About() {
                     height={50}
                     className="mb-4"
                   />
-                  <h4 className="text-lg font-bold text-white mb-3 group-hover:text-[#00ff88] transition-colors">
+                  <h4 className="text-lg font-bold text-white mb-3 group-hover:text-[#FF4500] transition-colors">
                     카카오임팩트
                   </h4>
                   <p className="text-[#cecece] text-sm">
@@ -243,7 +238,7 @@ export default function About() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6 }}
                   viewport={{ once: true }}
-                  className="block p-6 border border-[#1d1d1f] rounded-lg bg-black/50 hover:border-[#00ff88] transition-all duration-300 cursor-pointer group"
+                  className="block p-6 border border-[#1d1d1f] rounded-lg bg-black/50 hover:border-[#FF4500] transition-all duration-300 cursor-pointer group"
                 >
                   <Image
                     src="/images/sopoong-white.f482780_1751608800840_n2f92g.svg"
@@ -252,7 +247,7 @@ export default function About() {
                     height={50}
                     className="mb-4"
                   />
-                  <h4 className="text-lg font-bold text-white mb-3 group-hover:text-[#00ff88] transition-colors">
+                  <h4 className="text-lg font-bold text-white mb-3 group-hover:text-[#FF4500] transition-colors">
                     소풍벤처스
                   </h4>
                   <p className="text-[#cecece] text-sm">
@@ -287,7 +282,7 @@ export default function About() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6 }}
                   viewport={{ once: true }}
-                  className="block p-6 border border-[#1d1d1f] rounded-lg bg-black/50 text-center hover:border-[#00ff88] transition-all duration-300 cursor-pointer group"
+                  className="block p-6 border border-[#1d1d1f] rounded-lg bg-black/50 text-center hover:border-[#FF4500] transition-all duration-300 cursor-pointer group"
                 >
                   <div className="flex justify-center items-center gap-6 mb-4">
                     <Image
@@ -303,7 +298,7 @@ export default function About() {
                       height={67}
                     />
                   </div>
-                  <h4 className="text-lg font-bold text-white mb-3 group-hover:text-[#00ff88] transition-colors">APEC</h4>
+                  <h4 className="text-lg font-bold text-white mb-3 group-hover:text-[#FF4500] transition-colors">APEC</h4>
                   <p className="text-[#cecece] text-sm">
                     2025 기후테크 스타트업 서밋은 APEC 중소기업 장관회의 공식 연계프로그램으로 진행됩니다.
                   </p>
@@ -317,7 +312,7 @@ export default function About() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6 }}
                   viewport={{ once: true }}
-                  className="block p-6 border border-[#1d1d1f] rounded-lg bg-black/50 text-center hover:border-[#00ff88] transition-all duration-300 cursor-pointer group"
+                  className="block p-6 border border-[#1d1d1f] rounded-lg bg-black/50 text-center hover:border-[#FF4500] transition-all duration-300 cursor-pointer group"
                 >
                   <Image
                     src="/images/중소벤처기업부 logo.png"
@@ -326,7 +321,7 @@ export default function About() {
                     height={60}
                     className="mx-auto mb-4"
                   />
-                  <h4 className="text-lg font-bold text-white mb-3 group-hover:text-[#00ff88] transition-colors">중소벤처기업부</h4>
+                  <h4 className="text-lg font-bold text-white mb-3 group-hover:text-[#FF4500] transition-colors">중소벤처기업부</h4>
                   <p className="text-[#cecece] text-sm">
                     중소벤처기업부와의 협력을 통해 스타트업 생태계 발전과 
                     기업 성장을 위한 정책적 지원을 강화합니다.
@@ -346,7 +341,7 @@ export default function About() {
             </p>
             <a
               href="mailto:impactclimate@sopoong.net"
-              className="text-[#00ff88] hover:text-[#00ffff] transition-colors text-xl font-medium"
+              className="text-[#FF4500] hover:text-[#00CED1] transition-colors text-xl font-medium"
             >
               impactclimate@sopoong.net
             </a>
@@ -372,7 +367,7 @@ export default function About() {
                 onClick={(e) => e.stopPropagation()}
               >
                 <div className="mb-6">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-[#00ff88] to-[#00ffff] opacity-80 flex items-center justify-center">
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-[#FF4500] to-[#00CED1] opacity-80 flex items-center justify-center">
                     <svg className="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
@@ -388,7 +383,7 @@ export default function About() {
                 
                 <button
                   onClick={() => setShowComingSoon(false)}
-                  className="px-6 py-3 bg-gradient-to-r from-[#00ff88] to-[#00ffff] text-black font-bold rounded-lg hover:scale-105 transition-transform"
+                  className="px-6 py-3 bg-gradient-to-r from-[#FF4500] to-[#00CED1] text-black font-bold rounded-lg hover:scale-105 transition-transform"
                 >
                   확인
                 </button>
@@ -403,8 +398,8 @@ export default function About() {
             <div className="flex flex-col md:flex-row justify-between items-center">
               <div className="mb-4 md:mb-0">
                 <Image
-                  src="/images/logo.62f53a9_1751608800882_yequ2.svg"
-                  alt="Impact Climate Network"
+                  src="/images/summit logo wh.png"
+                  alt="Climate Summit Logo"
                   width={140}
                   height={24}
                   className="mb-2"
@@ -414,7 +409,7 @@ export default function About() {
                 </p>
               </div>
               <p className="text-[#cecece] text-sm">
-                서울특별시 강남구 테헤란로 415 L7강남타워 8층
+                서울특별시 성동구 왕십리로2길 20, 카우앤독 4층
               </p>
             </div>
           </div>
@@ -423,7 +418,7 @@ export default function About() {
 
       <style jsx global>{`
         .gradient-text-ai {
-          background: linear-gradient(90deg, #00ff88 0%, #00ffff 25%, #3258ee 50%, #00ffff 75%, #00ff88 100%);
+          background: linear-gradient(90deg, #FF4500 0%, #00CED1 25%, #1E90FF 50%, #00CED1 75%, #FF4500 100%);
           -webkit-background-clip: text;
           background-clip: text;
           -webkit-text-fill-color: transparent;

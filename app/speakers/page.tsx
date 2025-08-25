@@ -14,9 +14,9 @@ export default function Speakers() {
   const [expandedBios, setExpandedBios] = useState<Set<number>>(new Set())
   const [showComingSoon, setShowComingSoon] = useState(false)
   
-  // Featured Speakers IDs: 박성현, 제현주, 육심나, 한상엽, 김효은, 윤신영, 지현영, 류석영
-  const featuredSpeakerIds = [169, 108, 200, 107, 114, 118, 139, 131]
-  const featuredSpeakers = speakersData.filter(speaker => featuredSpeakerIds.includes(speaker.id))
+  // Featured Speakers IDs in specified order: 이학영, 한성숙, 류석영, 이유진, 육심나, 한상엽, 박성현, Penny Freer, Roy Torbert, Anup Jain, Andrew Chang, 제현주, 지현영, 황민호, 배여름, 김기만, 윤신영, 이원재, 권순우, 한승훈, 최지영, 홍종호, 김종규, 오보영, 김한수, 박병규, 최근형
+  const featuredSpeakerIds = [162, 209, 131, 199, 200, 107, 169, 193, 191, 207, 192, 108, 139, 109, 198, 148, 118, 151, 172, 142, 194, 130, 103, 135, 168, 206, 203]
+  const featuredSpeakers = featuredSpeakerIds.map(id => speakersData.find(speaker => speaker.id === id)).filter(Boolean)
 
   const toggleBio = (speakerId: number) => {
     setExpandedBios(prev => {
@@ -62,43 +62,41 @@ export default function Speakers() {
         className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-black via-black/95 to-black backdrop-blur-md border-b border-transparent" 
         style={{
           backgroundImage: "linear-gradient(to right, rgba(0,255,136,0.1), rgba(0,255,255,0.1), rgba(50,88,238,0.1))", 
-          borderImage: "linear-gradient(to right, #00ff88, #00ffff, #3258ee) 1"
+          borderImage: "linear-gradient(to right, #FF4500, #00CED1, #1E90FF) 1"
         }}
       >
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="relative">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-r from-[#00ff88] to-[#00ffff] opacity-80 animate-pulse" />
-                <div className="absolute inset-0 w-10 h-10 rounded-full bg-gradient-to-r from-[#00ff88] to-[#00ffff] blur-lg opacity-50" />
-              </div>
-              <div className="font-bold text-lg">
-                <span className="text-white">2025</span>
-                <span className="text-[#00ff88] mx-1">×</span>
-                <span className="bg-gradient-to-r from-[#00ff88] via-[#00ffff] to-[#3258ee] bg-clip-text text-transparent">CLIMATE SUMMIT</span>
-              </div>
+              <Image
+                src="/images/summit logo wh.png"
+                alt="Climate Summit Logo"
+                width={200}
+                height={40}
+                className="h-8 w-auto"
+              />
             </Link>
 
             <div className="hidden md:flex items-center space-x-8">
-              <Link href="/" className="relative text-white/80 hover:text-[#00ff88] transition-all duration-300 group py-2">
+              <Link href="/" className="relative text-white/80 hover:text-[#FF4500] transition-all duration-300 group py-2">
                 Home
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#00ff88] to-[#00ffff] group-hover:w-full transition-all duration-300" />
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#FF4500] to-[#00CED1] group-hover:w-full transition-all duration-300" />
               </Link>
-              <Link href="/about" className="relative text-white/80 hover:text-[#00ff88] transition-all duration-300 group py-2">
+              <Link href="/about" className="relative text-white/80 hover:text-[#FF4500] transition-all duration-300 group py-2">
                 About
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#00ff88] to-[#00ffff] group-hover:w-full transition-all duration-300" />
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#FF4500] to-[#00CED1] group-hover:w-full transition-all duration-300" />
               </Link>
-              <Link href="/program" className="relative text-white/80 hover:text-[#00ff88] transition-all duration-300 group py-2">
+              <Link href="/program" className="relative text-white/80 hover:text-[#FF4500] transition-all duration-300 group py-2">
                 Program
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#00ff88] to-[#00ffff] group-hover:w-full transition-all duration-300" />
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#FF4500] to-[#00CED1] group-hover:w-full transition-all duration-300" />
               </Link>
-              <Link href="/speakers" className="relative text-white/80 hover:text-[#00ff88] transition-all duration-300 group py-2">
+              <Link href="/speakers" className="relative text-white/80 hover:text-[#FF4500] transition-all duration-300 group py-2">
                 Speakers
-                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-[#00ff88] to-[#00ffff] scale-x-100 transition-transform duration-300" />
+                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-[#FF4500] to-[#00CED1] scale-x-100 transition-transform duration-300" />
               </Link>
-              <Link href="/past-events" className="relative text-white/80 hover:text-[#00ff88] transition-all duration-300 group py-2">
-                Past Events
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#00ff88] to-[#00ffff] group-hover:w-full transition-all duration-300" />
+              <Link href="/faq" className="relative text-white/80 hover:text-[#FF4500] transition-all duration-300 group py-2">
+                FAQ
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#FF4500] to-[#00CED1] group-hover:w-full transition-all duration-300" />
               </Link>
             </div>
 
@@ -129,7 +127,7 @@ export default function Speakers() {
               </h1>
               <p className="text-[#cecece] text-lg mb-8">
                 {language === 'ko' 
-                  ? '전 세계에서 모인 혁신가들을 만나보세요'
+                  ? '2025 기후테크 스타트업 서밋에는 이런 분들이 함께 합니다.'
                   : 'Meet innovators from around the world'
                 }
               </p>
@@ -161,46 +159,37 @@ export default function Speakers() {
                   className="text-center group cursor-pointer relative"
                 >
                   <div 
-                    className="relative w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden border-4 border-[#00ff88]/30 group-hover:border-[#00ff88] transition-colors cursor-pointer"
+                    className="relative w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden border-4 border-[#FF4500]/30 group-hover:border-[#FF4500] transition-colors cursor-pointer"
                     onClick={() => speaker.bio && toggleBio(speaker.id)}
                   >
                     {speaker.profileRound || speaker.profileImage ? (
-                      <img
+                      <Image
                         src={speaker.profileRound || speaker.profileImage}
                         alt={speaker.name}
+                        width={192}
+                        height={192}
                         className="w-full h-full object-cover"
+                        loading="lazy"
+                        placeholder="blur"
+                        blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCwAA8A/9k="
                         onError={(e) => {
                           e.currentTarget.style.display = 'none'
                           e.currentTarget.nextElementSibling?.classList.remove('hidden')
                         }}
                       />
                     ) : null}
-                    <div className={`w-full h-full bg-gradient-to-br from-[#00ff88]/20 to-[#00ffff]/20 flex items-center justify-center ${speaker.profileRound || speaker.profileImage ? 'hidden' : ''}`}>
+                    <div className={`w-full h-full bg-gradient-to-br from-[#FF4500]/20 to-[#00CED1]/20 flex items-center justify-center ${speaker.profileRound || speaker.profileImage ? 'hidden' : ''}`}>
                       <span className="text-4xl font-bold text-white">
                         {speaker.name.charAt(0)}
                       </span>
                     </div>
                     {speaker.bio && (
-                      <div className="absolute inset-0 bg-black/0 hover:bg-black/20 transition-colors flex items-center justify-center">
-                        <motion.div
-                          animate={{ 
-                            scale: expandedBios.has(speaker.id) ? 1.1 : 1,
-                            opacity: expandedBios.has(speaker.id) ? 1 : 0.7
-                          }}
-                          transition={{ duration: 0.2 }}
-                          className="w-8 h-8 bg-[#00ff88]/80 rounded-full flex items-center justify-center"
-                        >
-                          <motion.svg
-                            animate={{ rotate: expandedBios.has(speaker.id) ? 180 : 0 }}
-                            transition={{ duration: 0.2 }}
-                            className="w-4 h-4 text-black"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                          </motion.svg>
-                        </motion.div>
+                      <div className="absolute inset-0 bg-black/0 hover:bg-black/30 transition-all duration-300 flex items-center justify-center opacity-0 hover:opacity-100">
+                        <div className="w-full h-full bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end justify-center pb-4">
+                          <span className="text-white text-sm font-medium bg-black/60 px-3 py-1 rounded-full backdrop-blur-sm">
+                            소개 보기
+                          </span>
+                        </div>
                       </div>
                     )}
                   </div>
@@ -223,7 +212,7 @@ export default function Speakers() {
                       </a>
                     )}
                   </div>
-                  <p className="text-[#00ff88] mb-2">{speaker.company}</p>
+                  <p className="text-[#00CED1] mb-2">{speaker.company}</p>
                   <p className="text-[#cecece] text-sm mb-3">{speaker.position}</p>
                   {speaker.bio && (
                     <motion.div
@@ -255,14 +244,14 @@ export default function Speakers() {
                 placeholder="참가자 검색..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="flex-1 px-4 py-2 bg-transparent border border-[#1d1d1f] text-white rounded-lg focus:border-[#00ff88] focus:outline-none"
+                className="flex-1 px-4 py-2 bg-transparent border border-[#1d1d1f] text-white rounded-lg focus:border-[#FF4500] focus:outline-none"
               />
               <div className="flex gap-2">
                 <button
                   onClick={() => setFilterType('all')}
                   className={`px-6 py-2 rounded-lg font-medium transition-colors ${
                     filterType === 'all'
-                      ? 'bg-[#00ff88] text-black'
+                      ? 'bg-[#FF4500] text-black'
                       : 'bg-transparent border border-[#1d1d1f] text-[#cecece] hover:text-white'
                   }`}
                 >
@@ -272,7 +261,7 @@ export default function Speakers() {
                   onClick={() => setFilterType('international')}
                   className={`px-6 py-2 rounded-lg font-medium transition-colors ${
                     filterType === 'international'
-                      ? 'bg-[#00ff88] text-black'
+                      ? 'bg-[#FF4500] text-black'
                       : 'bg-transparent border border-[#1d1d1f] text-[#cecece] hover:text-white'
                   }`}
                 >
@@ -282,7 +271,7 @@ export default function Speakers() {
                   onClick={() => setFilterType('keynote')}
                   className={`px-6 py-2 rounded-lg font-medium transition-colors ${
                     filterType === 'keynote'
-                      ? 'bg-[#00ff88] text-black'
+                      ? 'bg-[#FF4500] text-black'
                       : 'bg-transparent border border-[#1d1d1f] text-[#cecece] hover:text-white'
                   }`}
                 >
@@ -314,17 +303,22 @@ export default function Speakers() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.3, delay: (index % 12) * 0.05 }}
                   viewport={{ once: true }}
-                  className="bg-gradient-to-br from-black/50 to-[#1a1a1a]/50 border border-[#1d1d1f] rounded-lg p-4 hover:border-[#00ff88]/50 transition-all duration-300 group"
+                  className="bg-gradient-to-br from-black/50 to-[#1a1a1a]/50 border border-[#1d1d1f] rounded-lg p-4 hover:border-[#FF4500]/50 transition-all duration-300 group"
                 >
                   <div 
-                    className="relative w-24 h-24 mx-auto mb-3 rounded-full overflow-hidden border-2 border-[#1d1d1f] group-hover:border-[#00ff88] transition-colors cursor-pointer"
+                    className="relative w-24 h-24 mx-auto mb-3 rounded-full overflow-hidden border-2 border-[#1d1d1f] group-hover:border-[#FF4500] transition-colors cursor-pointer"
                     onClick={() => speaker.bio && toggleBio(speaker.id)}
                   >
                     {speaker.profileImage || speaker.profileRound ? (
-                      <img
+                      <Image
                         src={speaker.profileRound || speaker.profileImage}
                         alt={speaker.name}
+                        width={96}
+                        height={96}
                         className="w-full h-full object-cover"
+                        loading="lazy"
+                        placeholder="blur"
+                        blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCwAA8A/9k="
                         onError={(e) => {
                           e.currentTarget.style.display = 'none'
                           e.currentTarget.nextElementSibling?.classList.remove('hidden')
@@ -337,32 +331,18 @@ export default function Speakers() {
                       </span>
                     </div>
                     {speaker.bio && (
-                      <div className="absolute inset-0 bg-black/0 hover:bg-black/20 transition-colors flex items-center justify-center">
-                        <motion.div
-                          animate={{ 
-                            scale: expandedBios.has(speaker.id) ? 1.1 : 1,
-                            opacity: expandedBios.has(speaker.id) ? 1 : 0.7
-                          }}
-                          transition={{ duration: 0.2 }}
-                          className="w-6 h-6 bg-[#00ff88]/80 rounded-full flex items-center justify-center"
-                        >
-                          <motion.svg
-                            animate={{ rotate: expandedBios.has(speaker.id) ? 180 : 0 }}
-                            transition={{ duration: 0.2 }}
-                            className="w-3 h-3 text-black"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                          </motion.svg>
-                        </motion.div>
+                      <div className="absolute inset-0 bg-black/0 hover:bg-black/30 transition-all duration-300 flex items-center justify-center opacity-0 hover:opacity-100">
+                        <div className="w-full h-full bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end justify-center pb-2">
+                          <span className="text-white text-xs font-medium bg-black/60 px-2 py-1 rounded-full backdrop-blur-sm">
+                            소개 보기
+                          </span>
+                        </div>
                       </div>
                     )}
                   </div>
                   <div className="text-center mb-3">
                     <div className="flex items-center justify-center gap-2 mb-2">
-                      <h3 className="text-base font-bold text-white group-hover:text-[#00ff88] transition-colors">
+                      <h3 className="text-base font-bold text-white group-hover:text-[#FF4500] transition-colors">
                         {speaker.name}
                       </h3>
                       {speaker.linkedin && (
@@ -383,12 +363,12 @@ export default function Speakers() {
                         </a>
                       )}
                     </div>
-                    <p className="text-sm text-[#00ff88] mb-1">{speaker.company}</p>
+                    <p className="text-sm text-[#00CED1] mb-1">{speaker.company}</p>
                     <p className="text-xs text-[#808080] mb-2">{speaker.position}</p>
                   </div>
                   {speaker.isInternational && (
                     <div className="text-center mb-3">
-                      <span className="inline-block px-2 py-1 bg-[#00ffff]/20 text-[#00ffff] text-xs rounded-full">
+                      <span className="inline-block px-2 py-1 bg-[#00CED1]/20 text-[#00CED1] text-xs rounded-full">
                         International
                       </span>
                     </div>
@@ -422,8 +402,8 @@ export default function Speakers() {
             <div className="flex flex-col md:flex-row justify-between items-center">
               <div className="mb-4 md:mb-0">
                 <Image
-                  src="/images/logo.62f53a9_1751608800882_yequ2.svg"
-                  alt="Impact Climate Network"
+                  src="/images/summit logo wh.png"
+                  alt="Climate Summit Logo"
                   width={140}
                   height={24}
                   className="mb-2"
@@ -433,7 +413,7 @@ export default function Speakers() {
                 </p>
               </div>
               <p className="text-[#cecece] text-sm">
-                서울특별시 강남구 테헤란로 415 L7강남타워 8층
+                서울특별시 성동구 왕십리로2길 20, 카우앤독 4층
               </p>
             </div>
           </div>
@@ -457,7 +437,7 @@ export default function Speakers() {
                 className="bg-gradient-to-br from-[#1a1a1a] to-black border border-[#333] rounded-xl p-8 max-w-md w-full text-center"
                 onClick={(e) => e.stopPropagation()}
               >
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-[#00ff88] to-[#00ffff] flex items-center justify-center">
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-[#FF4500] to-[#00CED1] flex items-center justify-center">
                   <svg className="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
@@ -468,7 +448,7 @@ export default function Speakers() {
                 </p>
                 <button
                   onClick={() => setShowComingSoon(false)}
-                  className="px-6 py-2 bg-gradient-to-r from-[#00ff88] to-[#00ffff] text-black font-bold rounded-lg hover:scale-105 transition-transform"
+                  className="px-6 py-2 bg-gradient-to-r from-[#FF4500] to-[#00CED1] text-black font-bold rounded-lg hover:scale-105 transition-transform"
                 >
                   확인
                 </button>
@@ -481,7 +461,7 @@ export default function Speakers() {
 
       <style jsx global>{`
         .gradient-text-ai {
-          background: linear-gradient(90deg, #00ff88 0%, #00ffff 25%, #3258ee 50%, #00ffff 75%, #00ff88 100%);
+          background: linear-gradient(90deg, #FF4500 0%, #00CED1 25%, #1E90FF 50%, #00CED1 75%, #FF4500 100%);
           -webkit-background-clip: text;
           background-clip: text;
           -webkit-text-fill-color: transparent;

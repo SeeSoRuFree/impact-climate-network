@@ -137,10 +137,11 @@ export default function NewsPage() {
             {/* Logo */}
             <Link href="/" className="flex items-center">
               <Image
-                src="/news/images/logo.62f53a9_1751611264107_5sr5m.svg"
-                alt="Impact Climate Network"
-                width={140}
-                height={24}
+                src="/images/summit logo wh.png"
+                alt="Climate Summit Logo"
+                width={200}
+                height={40}
+                className="h-8 w-auto"
                 priority
               />
             </Link>
@@ -491,8 +492,8 @@ export default function NewsPage() {
             <div className="flex flex-col md:flex-row justify-between items-center border-t border-[#1d1d1f] pt-8">
               <div className="mb-4 md:mb-0">
                 <Image
-                  src="/news/images/logo.62f53a9_1751611264107_5sr5m.svg"
-                  alt="Impact Climate Network"
+                  src="/images/summit logo wh.png"
+                  alt="Climate Summit Logo"
                   width={140}
                   height={24}
                   className="mb-2"
@@ -502,7 +503,7 @@ export default function NewsPage() {
                 </p>
               </div>
               <p className="text-[#cecece] text-sm">
-                서울특별시 강남구 테헤란로 415 L7강남타워 8층
+                서울특별시 성동구 왕십리로2길 20, 카우앤독 4층
               </p>
             </div>
           </div>
