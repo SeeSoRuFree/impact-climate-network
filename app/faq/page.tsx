@@ -181,7 +181,7 @@ export default function FAQ() {
                 <button
                   key={tab.id}
                   onClick={() => {
-                    setActiveTab(tab.id as any)
+                    setActiveTab(tab.id as 'attendance' | 'program' | 'travel' | 'etc')
                     setExpandedFAQ(null) // Close any open FAQ when switching tabs
                   }}
                   className={`px-6 py-3 rounded-lg font-medium transition-all ${

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -15,8 +15,8 @@ export default function Speakers() {
   const [showComingSoon, setShowComingSoon] = useState(false)
   
   // Featured Speakers IDs in specified order: 이학영, 한성숙, 류석영, 이유진, 육심나, 한상엽, 박성현, Penny Freer, Roy Torbert, Anup Jain, Andrew Chang, 제현주, 지현영, 황민호, 배여름, 김기만, 윤신영, 이원재, 권순우, 한승훈, 최지영, 홍종호, 김종규, 오보영, 김한수, 박병규, 최근형
-  const featuredSpeakerIds = [162, 209, 131, 199, 200, 107, 169, 193, 191, 207, 192, 108, 139, 109, 198, 148, 118, 151, 172, 142, 194, 130, 103, 135, 168, 206, 203]
-  const featuredSpeakers = featuredSpeakerIds.map(id => speakersData.find(speaker => speaker.id === id)).filter(Boolean)
+  const featuredSpeakerIds = useMemo(() => [162, 209, 131, 199, 200, 107, 169, 193, 191, 207, 192, 108, 139, 109, 198, 148, 118, 151, 172, 142, 194, 130, 103, 135, 168, 206, 203], [])
+  const featuredSpeakers = useMemo(() => featuredSpeakerIds.map(id => speakersData.find(speaker => speaker.id === id)).filter(Boolean) as typeof speakersData, [featuredSpeakerIds])
 
   const toggleBio = (speakerId: number) => {
     setExpandedBios(prev => {
@@ -53,7 +53,7 @@ export default function Speakers() {
     }
 
     setFilteredSpeakers(filtered)
-  }, [searchTerm, filterType])
+  }, [searchTerm, filterType, featuredSpeakerIds])
 
   return (
     <>

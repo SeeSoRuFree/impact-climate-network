@@ -5,13 +5,31 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 
+interface SpeakerType {
+  name: string
+  title?: string
+  role?: string
+  company?: string
+  image?: string
+}
+
+interface SessionType {
+  time: string
+  title: string
+  speaker?: string
+  speakers?: Array<string | SpeakerType>
+  description?: string
+  detailedDescription?: string
+  tag?: string
+}
+
 export default function Program() {
   const [selectedDay, setSelectedDay] = useState(1)
   const [language, setLanguage] = useState<'ko' | 'en'>('ko')
-  const [selectedSession, setSelectedSession] = useState<any>(null)
+  const [selectedSession, setSelectedSession] = useState<SessionType | null>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
 
-  const openSessionModal = (session: any) => {
+  const openSessionModal = (session: SessionType) => {
     setSelectedSession(session)
     setIsModalOpen(true)
   }
@@ -392,7 +410,7 @@ export default function Program() {
                         )}
                         {session.speakers && session.speakers.length > 0 && (
                           <div className="flex flex-wrap gap-2">
-                            {session.speakers.map((speaker: any, idx: number) => (
+                            {session.speakers.map((speaker: string | SpeakerType, idx: number) => (
                               <span
                                 key={idx}
                                 className="px-3 py-1 bg-[#1d1d1f] text-[#00CED1] text-sm rounded-full"
@@ -494,7 +512,7 @@ export default function Program() {
                     <div>
                       <h3 className="text-xl font-bold text-white mb-6">연사진</h3>
                       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {selectedSession.speakers.map((speaker: any, idx: number) => {
+                        {selectedSession.speakers.map((speaker: string | SpeakerType, idx: number) => {
                           // Handle both string and object speakers
                           const speakerName = typeof speaker === 'string' ? speaker : speaker.name;
                           const speakerTitle = typeof speaker === 'string' ? '' : speaker.title;
