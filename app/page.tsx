@@ -12,7 +12,6 @@ import { motion, AnimatePresence } from 'framer-motion'
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [language, setLanguage] = useState<'ko' | 'en'>('ko')
-  const [activeAccordion, setActiveAccordion] = useState<string | null>(null)
   const [countdown, setCountdown] = useState({
     days: 0,
     hours: 0,
@@ -42,37 +41,6 @@ export default function Home() {
 
     return () => clearInterval(interval)
   }, [])
-
-  const toggleAccordion = (section: string) => {
-    setActiveAccordion(activeAccordion === section ? null : section)
-  }
-
-  const programs = [
-    {
-      id: 1,
-      icon: '/images/program-1_1751608800816_naor36.svg',
-      title: '월간클라이밋',
-      description: '매월 둘째 주 목요일에 기후기술 관련 기업, 정부, 학계의 이야기를 전합니다.'
-    },
-    {
-      id: 2,
-      icon: '/images/program-2_1751608800837_os6orc.svg',
-      title: '연례 기후서밋',
-      description: '매년 기후기술 생태계 트렌드를 파악하고, 네트워킹할 수 있는 행사입니다.'
-    },
-    {
-      id: 3,
-      icon: '/images/program-3_1751608800838_vu9izzd.svg',
-      title: '기후테크 프레스데이',
-      description: '기후기술 기업의 성과와 비전을 언론과 대중에게 알리는 행사입니다.'
-    },
-    {
-      id: 4,
-      icon: '/images/program-4_1751608800839_ftd4s.svg',
-      title: '대학 기후기술 특강',
-      description: '대학생들에게 기후기술 산업의 현황과 미래를 소개하는 특별 강연입니다.'
-    }
-  ]
 
   return (
     <>
@@ -167,71 +135,25 @@ export default function Home() {
             </div>
 
             <div className="p-4">
-              {/* MENU Section */}
-              <div className="mb-6">
-                <button
-                  onClick={() => toggleAccordion('menu')}
-                  className="w-full flex justify-between items-center py-3 text-white font-bold"
-                >
-                  <span>MENU</span>
-                  <span>{activeAccordion === 'menu' ? '▲' : '▼'}</span>
-                </button>
-                {activeAccordion === 'menu' && (
-                  <div className="pl-4 space-y-3 mt-3">
-                    <Link href="/" className="block text-[#cecece]">Home</Link>
-                    <Link href="/about" className="block text-[#cecece]">About</Link>
-                    <Link href="/program" className="block text-[#cecece]">Program</Link>
-                    <Link href="/speakers" className="block text-[#cecece]">Speakers</Link>
-                    <Link href="/faq" className="block text-[#cecece]">FAQ</Link>
-                  </div>
-                )}
-              </div>
-
-              {/* PROGRAM Section */}
-              <div className="mb-6">
-                <button
-                  onClick={() => toggleAccordion('program')}
-                  className="w-full flex justify-between items-center py-3 text-white font-bold"
-                >
-                  <span>PROGRAM</span>
-                  <span>{activeAccordion === 'program' ? '▲' : '▼'}</span>
-                </button>
-                {activeAccordion === 'program' && (
-                  <div className="pl-4 space-y-3 mt-3">
-                    {programs.map((program) => (
-                      <div key={program.id} className="flex items-start space-x-3">
-                        <Image
-                          src={program.icon}
-                          alt={program.title}
-                          width={24}
-                          height={24}
-                        />
-                        <span className="text-[#cecece]">{program.title}</span>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              {/* FAMILIES Section */}
-              <div className="mb-6">
-                <button
-                  onClick={() => toggleAccordion('families')}
-                  className="w-full flex justify-between items-center py-3 text-white font-bold"
-                >
-                  <span>FAMILIES</span>
-                  <span>{activeAccordion === 'families' ? '▲' : '▼'}</span>
-                </button>
-                {activeAccordion === 'families' && (
-                  <div className="pl-4 space-y-3 mt-3">
-                    <a href="https://sopoong.net" target="_blank" rel="noopener noreferrer" className="block text-[#cecece]">
-                      Sopoong
-                    </a>
-                    <a href="https://kakaoimpact.org" target="_blank" rel="noopener noreferrer" className="block text-[#cecece]">
-                      Kakao Impact
-                    </a>
-                  </div>
-                )}
+              {/* Navigation menu */}
+              <div className="space-y-4">
+                <div className="space-y-3">
+                  <Link href="/" className="block text-[#cecece] py-2 hover:text-white transition-colors" onClick={() => setIsMenuOpen(false)}>
+                    Home
+                  </Link>
+                  <Link href="/about" className="block text-[#cecece] py-2 hover:text-white transition-colors" onClick={() => setIsMenuOpen(false)}>
+                    About
+                  </Link>
+                  <Link href="/program" className="block text-[#cecece] py-2 hover:text-white transition-colors" onClick={() => setIsMenuOpen(false)}>
+                    Program
+                  </Link>
+                  <Link href="/speakers" className="block text-[#cecece] py-2 hover:text-white transition-colors" onClick={() => setIsMenuOpen(false)}>
+                    Speakers
+                  </Link>
+                  <Link href="/faq" className="block text-[#cecece] py-2 hover:text-white transition-colors" onClick={() => setIsMenuOpen(false)}>
+                    FAQ
+                  </Link>
+                </div>
               </div>
             </div>
           </motion.div>

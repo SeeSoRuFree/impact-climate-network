@@ -6,32 +6,45 @@ import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import speakersData from '../../public/2025-summit/data/speakers.json'
 
+interface Speaker {
+  id: number
+  name: string
+  nameEn: string
+  company: string
+  companyEn: string
+  position: string
+  positionEn: string
+  linkedin: string
+  profileImage: string
+  profileRound: string
+  isInternational: boolean
+  bio: string
+  bioEn?: string
+}
+
+const typedSpeakersData = speakersData as Speaker[]
+
 export default function Speakers() {
   const [searchTerm, setSearchTerm] = useState('')
   const [filterType, setFilterType] = useState('all')
   const [language, setLanguage] = useState<'ko' | 'en'>('ko')
-  const [filteredSpeakers, setFilteredSpeakers] = useState(speakersData)
-  const [expandedBios, setExpandedBios] = useState<Set<number>>(new Set())
+  const [filteredSpeakers, setFilteredSpeakers] = useState(typedSpeakersData)
+  const [selectedSpeaker, setSelectedSpeaker] = useState<Speaker | null>(null)
   const [showComingSoon, setShowComingSoon] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
   
   // Featured Speakers IDs in specified order: 이학영, 한성숙, 류석영, 이유진, 육심나, 한상엽, 박성현, Penny Freer, Roy Torbert, Anup Jain, Andrew Chang, 제현주, 지현영, 황민호, 배여름, 김기만, 윤신영, 이원재, 권순우, 한승훈, 최지영, 홍종호, 김종규, 오보영, 김한수, 박병규, 최근형
   const featuredSpeakerIds = useMemo(() => [162, 209, 131, 199, 200, 107, 169, 193, 191, 207, 192, 108, 139, 109, 198, 148, 118, 151, 172, 142, 194, 130, 103, 135, 168, 206, 203], [])
-  const featuredSpeakers = useMemo(() => featuredSpeakerIds.map(id => speakersData.find(speaker => speaker.id === id)).filter(Boolean) as typeof speakersData, [featuredSpeakerIds])
+  const featuredSpeakers = useMemo(() => featuredSpeakerIds.map(id => typedSpeakersData.find(speaker => speaker.id === id)).filter(Boolean) as Speaker[], [featuredSpeakerIds])
 
-  const toggleBio = (speakerId: number) => {
-    setExpandedBios(prev => {
-      const newSet = new Set(prev)
-      if (newSet.has(speakerId)) {
-        newSet.delete(speakerId)
-      } else {
-        newSet.add(speakerId)
-      }
-      return newSet
-    })
+  const openBioModal = (speaker: Speaker) => {
+    if (speaker.bio) {
+      setSelectedSpeaker(speaker)
+    }
   }
 
   useEffect(() => {
-    let filtered = speakersData
+    let filtered = typedSpeakersData
 
     // Search filter
     if (searchTerm) {
@@ -107,10 +120,70 @@ export default function Speakers() {
               >
                 {language === 'ko' ? 'KO' : 'EN'} <span className="text-white/40">|</span> {language === 'ko' ? 'EN' : 'KO'}
               </button>
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="md:hidden w-6 h-6 flex flex-col justify-center space-y-1"
+              >
+                <span className="block w-full h-0.5 bg-white"></span>
+                <span className="block w-full h-0.5 bg-white"></span>
+                <span className="block w-full h-0.5 bg-white"></span>
+              </button>
             </div>
           </div>
         </div>
       </nav>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ x: '100%' }}
+            animate={{ x: 0 }}
+            exit={{ x: '100%' }}
+            transition={{ type: 'tween', duration: 0.3 }}
+            className="fixed inset-0 z-[100] bg-black md:hidden"
+          >
+            <div className="flex justify-between items-center p-4 border-b border-[#1d1d1f]">
+              <Image
+                src="/images/summit logo wh.png"
+                alt="Climate Summit Logo"
+                width={140}
+                height={24}
+              />
+              <button
+                onClick={() => setIsMenuOpen(false)}
+                className="w-6 h-6"
+              >
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+
+            <div className="p-4">
+              <div className="space-y-4">
+                <div className="space-y-3">
+                  <Link href="/" className="block text-[#cecece] py-2 hover:text-white transition-colors" onClick={() => setIsMenuOpen(false)}>
+                    Home
+                  </Link>
+                  <Link href="/about" className="block text-[#cecece] py-2 hover:text-white transition-colors" onClick={() => setIsMenuOpen(false)}>
+                    About
+                  </Link>
+                  <Link href="/program" className="block text-[#cecece] py-2 hover:text-white transition-colors" onClick={() => setIsMenuOpen(false)}>
+                    Program
+                  </Link>
+                  <Link href="/speakers" className="block text-[#cecece] py-2 hover:text-white transition-colors" onClick={() => setIsMenuOpen(false)}>
+                    Speakers
+                  </Link>
+                  <Link href="/faq" className="block text-[#cecece] py-2 hover:text-white transition-colors" onClick={() => setIsMenuOpen(false)}>
+                    FAQ
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <main className="min-h-screen bg-black pt-16">
         {/* Hero Section */}
@@ -148,7 +221,7 @@ export default function Speakers() {
               Speakers
             </motion.h2>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
               {featuredSpeakers.map((speaker, index) => (
                 <motion.div
                   key={speaker.id}
@@ -159,8 +232,8 @@ export default function Speakers() {
                   className="text-center group cursor-pointer relative"
                 >
                   <div 
-                    className="relative w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden border-4 border-[#FF4500]/30 group-hover:border-[#FF4500] transition-colors cursor-pointer"
-                    onClick={() => speaker.bio && toggleBio(speaker.id)}
+                    className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 mx-auto mb-4 rounded-full overflow-hidden border-4 border-[#FF4500]/30 group-hover:border-[#FF4500] transition-colors cursor-pointer"
+                    onClick={() => openBioModal(speaker)}
                   >
                     {speaker.profileRound || speaker.profileImage ? (
                       <Image
@@ -187,14 +260,14 @@ export default function Speakers() {
                       <div className="absolute inset-0 bg-black/0 hover:bg-black/30 transition-all duration-300 flex items-center justify-center opacity-0 hover:opacity-100">
                         <div className="w-full h-full bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end justify-center pb-4">
                           <span className="text-white text-sm font-medium bg-black/60 px-3 py-1 rounded-full backdrop-blur-sm">
-                            소개 보기
+                            {language === 'ko' ? '소개 보기' : 'View Bio'}
                           </span>
                         </div>
                       </div>
                     )}
                   </div>
                   <div className="flex items-center justify-center gap-2 mb-2">
-                    <h3 className="text-xl font-bold text-white">{speaker.name}</h3>
+                    <h3 className="text-xl font-bold text-white">{language === 'en' ? speaker.nameEn : speaker.name}</h3>
                     {speaker.linkedin && (
                       <a
                         href={speaker.linkedin}
@@ -212,23 +285,8 @@ export default function Speakers() {
                       </a>
                     )}
                   </div>
-                  <p className="text-[#00CED1] mb-2">{speaker.company}</p>
-                  <p className="text-[#cecece] text-sm mb-3">{speaker.position}</p>
-                  {speaker.bio && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ 
-                        height: expandedBios.has(speaker.id) ? 'auto' : 0,
-                        opacity: expandedBios.has(speaker.id) ? 1 : 0
-                      }}
-                      transition={{ duration: 0.3, ease: 'easeInOut' }}
-                      className="overflow-hidden mt-3"
-                    >
-                      <div className="px-2 py-3 border-t border-[#1d1d1f]/50">
-                        <p className="text-[#808080] text-sm leading-relaxed whitespace-pre-line text-left">{speaker.bio}</p>
-                      </div>
-                    </motion.div>
-                  )}
+                  <p className="text-[#00CED1] mb-2">{language === 'en' ? speaker.companyEn : speaker.company}</p>
+                  <p className="text-[#cecece] text-sm mb-3">{language === 'en' ? speaker.positionEn : speaker.position}</p>
                 </motion.div>
               ))}
             </div>
@@ -241,7 +299,7 @@ export default function Speakers() {
             <div className="flex flex-col md:flex-row gap-4">
               <input
                 type="text"
-                placeholder="참가자 검색..."
+                placeholder={language === 'ko' ? '참가자 검색...' : 'Search participants...'}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="flex-1 px-4 py-2 bg-transparent border border-[#1d1d1f] text-white rounded-lg focus:border-[#FF4500] focus:outline-none"
@@ -255,7 +313,7 @@ export default function Speakers() {
                       : 'bg-transparent border border-[#1d1d1f] text-[#cecece] hover:text-white'
                   }`}
                 >
-                  전체
+                  {language === 'ko' ? '전체' : 'All'}
                 </button>
                 <button
                   onClick={() => setFilterType('international')}
@@ -265,7 +323,7 @@ export default function Speakers() {
                       : 'bg-transparent border border-[#1d1d1f] text-[#cecece] hover:text-white'
                   }`}
                 >
-                  해외 참가자
+                  {language === 'ko' ? '해외 참가자' : 'International'}
                 </button>
                 <button
                   onClick={() => setFilterType('keynote')}
@@ -275,7 +333,7 @@ export default function Speakers() {
                       : 'bg-transparent border border-[#1d1d1f] text-[#cecece] hover:text-white'
                   }`}
                 >
-                  주요 연사
+                  {language === 'ko' ? '주요 연사' : 'Keynote'}
                 </button>
               </div>
             </div>
@@ -295,7 +353,7 @@ export default function Speakers() {
               All Participants
             </motion.h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4 md:gap-6">
               {filteredSpeakers.map((speaker, index) => (
                 <motion.div
                   key={speaker.id}
@@ -306,8 +364,8 @@ export default function Speakers() {
                   className="bg-gradient-to-br from-black/50 to-[#1a1a1a]/50 border border-[#1d1d1f] rounded-lg p-4 hover:border-[#FF4500]/50 transition-all duration-300 group"
                 >
                   <div 
-                    className="relative w-24 h-24 mx-auto mb-3 rounded-full overflow-hidden border-2 border-[#1d1d1f] group-hover:border-[#FF4500] transition-colors cursor-pointer"
-                    onClick={() => speaker.bio && toggleBio(speaker.id)}
+                    className="relative w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-2 sm:mb-3 rounded-full overflow-hidden border-2 border-[#1d1d1f] group-hover:border-[#FF4500] transition-colors cursor-pointer"
+                    onClick={() => openBioModal(speaker)}
                   >
                     {speaker.profileImage || speaker.profileRound ? (
                       <Image
@@ -334,7 +392,7 @@ export default function Speakers() {
                       <div className="absolute inset-0 bg-black/0 hover:bg-black/30 transition-all duration-300 flex items-center justify-center opacity-0 hover:opacity-100">
                         <div className="w-full h-full bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end justify-center pb-2">
                           <span className="text-white text-xs font-medium bg-black/60 px-2 py-1 rounded-full backdrop-blur-sm">
-                            소개 보기
+                            {language === 'ko' ? '소개 보기' : 'View Bio'}
                           </span>
                         </div>
                       </div>
@@ -343,7 +401,7 @@ export default function Speakers() {
                   <div className="text-center mb-3">
                     <div className="flex items-center justify-center gap-2 mb-2">
                       <h3 className="text-base font-bold text-white group-hover:text-[#FF4500] transition-colors">
-                        {speaker.name}
+                        {language === 'en' ? speaker.nameEn : speaker.name}
                       </h3>
                       {speaker.linkedin && (
                         <a
@@ -363,8 +421,8 @@ export default function Speakers() {
                         </a>
                       )}
                     </div>
-                    <p className="text-sm text-[#00CED1] mb-1">{speaker.company}</p>
-                    <p className="text-xs text-[#808080] mb-2">{speaker.position}</p>
+                    <p className="text-sm text-[#00CED1] mb-1">{language === 'en' ? speaker.companyEn : speaker.company}</p>
+                    <p className="text-xs text-[#808080] mb-2">{language === 'en' ? speaker.positionEn : speaker.position}</p>
                   </div>
                   {speaker.isInternational && (
                     <div className="text-center mb-3">
@@ -372,23 +430,6 @@ export default function Speakers() {
                         International
                       </span>
                     </div>
-                  )}
-                  
-                  {/* Bio Expansion Panel */}
-                  {speaker.bio && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ 
-                        height: expandedBios.has(speaker.id) ? 'auto' : 0,
-                        opacity: expandedBios.has(speaker.id) ? 1 : 0
-                      }}
-                      transition={{ duration: 0.3, ease: 'easeInOut' }}
-                      className="overflow-hidden mt-3"
-                    >
-                      <div className="px-2 py-3 border-t border-[#1d1d1f]/50">
-                        <p className="text-[#cecece] text-xs leading-relaxed whitespace-pre-line text-left">{speaker.bio}</p>
-                      </div>
-                    </motion.div>
                   )}
                 </motion.div>
               ))}
@@ -419,6 +460,74 @@ export default function Speakers() {
           </div>
         </footer>
 
+        {/* Bio Modal */}
+        <AnimatePresence>
+          {selectedSpeaker && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+              onClick={() => setSelectedSpeaker(null)}
+            >
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.95, y: 20 }}
+                transition={{ duration: 0.3 }}
+                className="bg-gradient-to-br from-[#1a1a1a] to-black border border-[#333] rounded-xl p-6 max-w-2xl w-full max-h-[80vh] overflow-y-auto"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div className="flex justify-between items-start mb-4">
+                  <div className="flex items-center gap-4">
+                    <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-[#FF4500]">
+                      {selectedSpeaker.profileRound || selectedSpeaker.profileImage ? (
+                        <Image
+                          src={selectedSpeaker.profileRound || selectedSpeaker.profileImage}
+                          alt={selectedSpeaker.name}
+                          width={80}
+                          height={80}
+                          className="w-full h-full object-cover"
+                        />
+                      ) : (
+                        <div className="w-full h-full bg-gradient-to-br from-[#FF4500]/20 to-[#00CED1]/20 flex items-center justify-center">
+                          <span className="text-2xl font-bold text-white">
+                            {selectedSpeaker.name.charAt(0)}
+                          </span>
+                        </div>
+                      )}
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-white mb-1">
+                        {language === 'en' ? selectedSpeaker.nameEn : selectedSpeaker.name}
+                      </h3>
+                      <p className="text-[#00CED1] text-sm mb-1">
+                        {language === 'en' ? selectedSpeaker.companyEn : selectedSpeaker.company}
+                      </p>
+                      <p className="text-[#cecece] text-sm">
+                        {language === 'en' ? selectedSpeaker.positionEn : selectedSpeaker.position}
+                      </p>
+                    </div>
+                  </div>
+                  <button
+                    onClick={() => setSelectedSpeaker(null)}
+                    className="text-white/60 hover:text-white transition-colors"
+                  >
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                </div>
+                <div className="border-t border-[#333] pt-4">
+                  <p className="text-[#cecece] leading-relaxed whitespace-pre-line">
+                    {language === 'en' && selectedSpeaker.bioEn ? selectedSpeaker.bioEn : selectedSpeaker.bio}
+                  </p>
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
         {/* Coming Soon Modal */}
         <AnimatePresence>
           {showComingSoon && (
@@ -444,13 +553,13 @@ export default function Speakers() {
                 </div>
                 <h3 className="text-xl font-bold text-white mb-2">Coming Soon</h3>
                 <p className="text-[#cecece] mb-6">
-                  연사 정보가 곧 업데이트됩니다. 조금만 기다려주세요!
+                  {language === 'ko' ? '연사 정보가 곧 업데이트됩니다. 조금만 기다려주세요!' : 'Speaker information will be updated soon. Please wait!'}
                 </p>
                 <button
                   onClick={() => setShowComingSoon(false)}
                   className="px-6 py-2 bg-gradient-to-r from-[#FF4500] to-[#00CED1] text-black font-bold rounded-lg hover:scale-105 transition-transform"
                 >
-                  확인
+                  {language === 'ko' ? '확인' : 'OK'}
                 </button>
               </motion.div>
             </motion.div>

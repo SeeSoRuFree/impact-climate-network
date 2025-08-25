@@ -9,6 +9,7 @@ export default function FAQ() {
   const [language, setLanguage] = useState<'ko' | 'en'>('ko')
   const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null)
   const [activeTab, setActiveTab] = useState<'attendance' | 'program' | 'travel' | 'etc'>('attendance')
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const toggleFAQ = (id: number) => {
     setExpandedFAQ(expandedFAQ === id ? null : id)
@@ -143,10 +144,70 @@ export default function FAQ() {
               >
                 {language === 'ko' ? 'KO' : 'EN'} <span className="text-white/40">|</span> {language === 'ko' ? 'EN' : 'KO'}
               </button>
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="md:hidden w-6 h-6 flex flex-col justify-center space-y-1"
+              >
+                <span className="block w-full h-0.5 bg-white"></span>
+                <span className="block w-full h-0.5 bg-white"></span>
+                <span className="block w-full h-0.5 bg-white"></span>
+              </button>
             </div>
           </div>
         </div>
       </nav>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ x: '100%' }}
+            animate={{ x: 0 }}
+            exit={{ x: '100%' }}
+            transition={{ type: 'tween', duration: 0.3 }}
+            className="fixed inset-0 z-[100] bg-black md:hidden"
+          >
+            <div className="flex justify-between items-center p-4 border-b border-[#1d1d1f]">
+              <Image
+                src="/images/summit logo wh.png"
+                alt="Climate Summit Logo"
+                width={140}
+                height={24}
+              />
+              <button
+                onClick={() => setIsMenuOpen(false)}
+                className="w-6 h-6"
+              >
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+
+            <div className="p-4">
+              <div className="space-y-4">
+                <div className="space-y-3">
+                  <Link href="/" className="block text-[#cecece] py-2 hover:text-white transition-colors" onClick={() => setIsMenuOpen(false)}>
+                    Home
+                  </Link>
+                  <Link href="/about" className="block text-[#cecece] py-2 hover:text-white transition-colors" onClick={() => setIsMenuOpen(false)}>
+                    About
+                  </Link>
+                  <Link href="/program" className="block text-[#cecece] py-2 hover:text-white transition-colors" onClick={() => setIsMenuOpen(false)}>
+                    Program
+                  </Link>
+                  <Link href="/speakers" className="block text-[#cecece] py-2 hover:text-white transition-colors" onClick={() => setIsMenuOpen(false)}>
+                    Speakers
+                  </Link>
+                  <Link href="/faq" className="block text-[#cecece] py-2 hover:text-white transition-colors" onClick={() => setIsMenuOpen(false)}>
+                    FAQ
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <main className="min-h-screen bg-black pt-16">
         {/* Hero Section */}
