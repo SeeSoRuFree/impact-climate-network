@@ -23,7 +23,8 @@
       "Bash(true)",
       "Bash(chmod:*)",
       "Bash(\"/Users/seoyeongyu/Desktop/networkimapct-main/copy_images.sh\")",
-      "Bash(/Users/seoyeongyu/Desktop/networkimapct-main/copy_images.sh)"
+      "Bash(/Users/seoyeongyu/Desktop/networkimapct-main/copy_images.sh)",
+      "Bash(git pull:*)"
     ],
     "deny": [],
     "ask": []
