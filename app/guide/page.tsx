@@ -366,6 +366,26 @@ git push origin feature/기능명`}</code>
 
         {/* 푸터 */}
         <footer className="mt-20 pt-8 border-t border-gray-200 dark:border-gray-800">
+          <div className="flex flex-col md:flex-row justify-between items-center mb-8">
+            <div className="mb-4 md:mb-0">
+              <div className="flex items-center gap-4 mb-2">
+                <span className="text-2xl font-bold">Climate Summit</span>
+                <span className="text-lg opacity-80">Kakao Impact</span>
+                <span className="text-lg opacity-80">Sopoong Ventures</span>
+              </div>
+              <p className="text-gray-600 dark:text-gray-400 text-sm">
+                COPYRIGHT © CLIMATE NETWORK CORP ALL RIGHTS RESERVED
+              </p>
+            </div>
+            <div className="text-right">
+              <p className="text-gray-600 dark:text-gray-400 text-sm mb-1">
+                이 홈페이지는 바이브코딩으로 만들어졌습니다
+              </p>
+              <p className="text-gray-600 dark:text-gray-400 text-sm">
+                서울특별시 성동구 왕십리로2길 20, 카우앤독 4층
+              </p>
+            </div>
+          </div>
           <p className="text-center text-gray-600 dark:text-gray-400">
             Built with ❤️ using Next.js and modern web technologies
           </p>

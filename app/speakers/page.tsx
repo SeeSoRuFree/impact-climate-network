@@ -34,7 +34,7 @@ export default function Speakers() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   
   // Featured Speakers IDs in specified order: 이학영, 한성숙, 류석영, 이유진, 육심나, 한상엽, 박성현, Penny Freer, Roy Torbert, Anup Jain, Andrew Chang, 제현주, 지현영, 황민호, 배여름, 김기만, 윤신영, 이원재, 권순우, 한승훈, 최지영, 홍종호, 김종규, 오보영, 김한수, 박병규, 최근형
-  const featuredSpeakerIds = useMemo(() => [162, 209, 131, 199, 200, 107, 169, 193, 191, 207, 192, 108, 139, 109, 198, 148, 118, 151, 172, 142, 194, 130, 103, 135, 168, 206, 203], [])
+  const featuredSpeakerIds = useMemo(() => [162, 209, 131, 199, 200, 107, 169, 193, 191, 207, 192, 108, 139, 109, 198, 148, 118, 151, 172, 142,  194, 130, 103, 135, 168, 206, 203], [])
   const featuredSpeakers = useMemo(() => featuredSpeakerIds.map(id => typedSpeakersData.find(speaker => speaker.id === id)).filter(Boolean) as Speaker[], [featuredSpeakerIds])
 
   const openBioModal = (speaker: Speaker) => {
@@ -63,6 +63,21 @@ export default function Speakers() {
     } else if (filterType === 'keynote') {
       // Featured speakers (same as Speakers section)
       filtered = filtered.filter(speaker => featuredSpeakerIds.includes(speaker.id))
+    }
+
+    // Sort All Participants alphabetically by Korean name (ㄱㄴㄷ order)
+    if (filterType === 'all') {
+      filtered = filtered.sort((a, b) => {
+        // Put Korean names first, English-only names last
+        const aIsKorean = /[가-힣]/.test(a.name)
+        const bIsKorean = /[가-힣]/.test(b.name)
+        
+        if (aIsKorean && !bIsKorean) return -1
+        if (!aIsKorean && bIsKorean) return 1
+        
+        // Both Korean or both English - sort alphabetically
+        return a.name.localeCompare(b.name, 'ko-KR')
+      })
     }
 
     setFilteredSpeakers(filtered)
@@ -442,20 +457,40 @@ export default function Speakers() {
           <div className="container mx-auto max-w-6xl">
             <div className="flex flex-col md:flex-row justify-between items-center">
               <div className="mb-4 md:mb-0">
-                <Image
-                  src="/images/summit logo wh.png"
-                  alt="Climate Summit Logo"
-                  width={140}
-                  height={24}
-                  className="mb-2"
-                />
+                <div className="flex items-center gap-4 mb-2">
+                  <Image
+                    src="/images/summit logo wh.png"
+                    alt="Climate Summit Logo"
+                    width={140}
+                    height={24}
+                  />
+                  <Image
+                    src="/images/kakao-white.9938a19_1751608800882_cgvfo6.svg"
+                    alt="Kakao Impact"
+                    width={100}
+                    height={20}
+                    className="opacity-80 hover:opacity-100 transition-opacity"
+                  />
+                  <Image
+                    src="/images/sopoong-white.f482780_1751608800840_n2f92g.svg"
+                    alt="Sopoong Ventures"
+                    width={100}
+                    height={20}
+                    className="opacity-80 hover:opacity-100 transition-opacity"
+                  />
+                </div>
                 <p className="text-[#cecece] text-sm">
                   COPYRIGHT © CLIMATE NETWORK CORP ALL RIGHTS RESERVED
                 </p>
               </div>
-              <p className="text-[#cecece] text-sm">
-                서울특별시 성동구 왕십리로2길 20, 카우앤독 4층
-              </p>
+              <div className="text-right">
+                <p className="text-[#cecece] text-sm mb-1">
+                  이 홈페이지는 바이브코딩으로 만들어졌습니다
+                </p>
+                <p className="text-[#cecece] text-sm">
+                  서울특별시 성동구 왕십리로2길 20, 카우앤독 4층
+                </p>
+              </div>
             </div>
           </div>
         </footer>

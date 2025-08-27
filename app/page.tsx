@@ -163,7 +163,7 @@ export default function Home() {
       {/* Main Content */}
       <main className="min-h-screen bg-black">
         {/* Hero Section - 2025 Summit */}
-        <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24">
           {/* AI Matrix Background */}
           <div className="absolute inset-0">
             <div className="matrix-bg"></div>
@@ -172,25 +172,59 @@ export default function Home() {
           {/* Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-br from-black via-transparent to-black opacity-60"></div>
           
-          <div className="relative z-10 text-center px-4">
+          <div className="relative z-10 text-center px-4 mt-8">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1 }}
               className="mb-8"
             >
-              <div className="mb-4">
-                <Image
-                  src="/images/summit logo wh.png"
-                  alt="2025 Climate Tech Startup Summit"
-                  width={600}
-                  height={200}
-                  className="mx-auto"
-                />
+              <div className="mb-4 relative group cursor-pointer">
+                {/* Main Orange Glow - 15% transparency, soft spread */}
+                <div className="absolute inset-0 -mx-20 -my-6 bg-gradient-to-r from-transparent via-[#FF4500]/15 to-transparent rounded-2xl blur-xl opacity-30 group-hover:opacity-50 transition-all duration-500"></div>
+                
+                {/* Cyan Supporting Glow - 12% transparency, medium spread */}
+                <div className="absolute inset-0 -mx-16 -my-4 bg-gradient-to-r from-transparent via-[#00CED1]/12 to-transparent rounded-xl blur-lg opacity-35 group-hover:opacity-55 transition-all duration-500"></div>
+                
+                {/* Color Mix Layer - Blue-Orange-Cyan combination (8-10%) */}
+                <div className="absolute inset-0 -mx-12 -my-3 bg-gradient-to-r from-[#1E90FF]/8 via-[#FF4500]/10 to-[#00CED1]/9 rounded-lg blur-md opacity-25 group-hover:opacity-45 transition-all duration-500"></div>
+                
+                {/* Soft Radial Glow - pulse animation for liveliness */}
+                <div className="absolute inset-0 -mx-8 -my-2 bg-gradient-radial from-[#FF4500]/6 via-[#00CED1]/4 to-transparent rounded-full blur-xl opacity-40 group-hover:opacity-60 transition-all duration-600 animate-pulse"></div>
+                
+                {/* Ambient Background - subtle outer lighting (15%) */}
+                <div className="absolute inset-0 -mx-24 -my-8 bg-gradient-to-r from-[#FF4500]/15 via-transparent to-[#00CED1]/15 rounded-full blur-2xl opacity-20 group-hover:opacity-35 transition-all duration-800"></div>
+                
+                <div className="relative z-10">
+                  <div className="relative">
+                    {/* External Glow Effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#FF4500]/20 via-[#00CED1]/15 to-[#1E90FF]/20 rounded-lg blur-md opacity-60 group-hover:opacity-80 transition-all duration-500"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#00CED1]/15 via-[#FF4500]/20 to-[#00CED1]/15 rounded-xl blur-lg opacity-40 group-hover:opacity-65 transition-all duration-500"></div>
+                    <div className="absolute inset-0 bg-gradient-radial from-[#FF4500]/10 via-[#00CED1]/8 to-transparent rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition-all duration-600"></div>
+                    
+                    {/* Horizontal Extension Glow Effects */}
+                    <div className="absolute inset-0 -mx-8 bg-gradient-to-r from-[#FF4500]/25 via-transparent to-[#00CED1]/25 blur-lg opacity-45 group-hover:opacity-70 transition-all duration-500"></div>
+                    <div className="absolute inset-0 -mx-16 bg-gradient-to-r from-[#FF4500]/20 via-transparent to-[#00CED1]/20 blur-xl opacity-35 group-hover:opacity-60 transition-all duration-500"></div>
+                    <div className="absolute inset-0 -mx-24 bg-gradient-to-r from-[#FF4500]/15 via-transparent to-[#00CED1]/15 blur-2xl opacity-25 group-hover:opacity-45 transition-all duration-600"></div>
+                    
+                    {/* Strong Left-Right Edge Glows */}
+                    <div className="absolute left-0 top-0 bottom-0 -ml-12 w-24 bg-gradient-to-r from-[#FF4500]/30 to-transparent blur-lg opacity-50 group-hover:opacity-75 transition-all duration-500"></div>
+                    <div className="absolute right-0 top-0 bottom-0 -mr-12 w-24 bg-gradient-to-l from-[#00CED1]/30 to-transparent blur-lg opacity-50 group-hover:opacity-75 transition-all duration-500"></div>
+                    
+                    <Image
+                      src="/images/25서밋_타이틀 검정배경.png"
+                      alt="2025 Climate Tech Startup Summit"
+                      width={800}
+                      height={300}
+                      className="relative mx-auto drop-shadow-2xl opacity-90 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-500 ease-out"
+                      priority
+                    />
+                  </div>
+                </div>
               </div>
               
-              <div className="mt-8 mb-12">
-                <div className="inline-block px-6 py-3 mb-6 border border-[#FF4500] bg-black/50 backdrop-blur-sm rounded-full">
+              <div className="mt-16 mb-16">
+                <div className="inline-block px-6 py-3 mb-12 border border-[#FF4500] bg-black/50 backdrop-blur-sm rounded-full">
                   <span className="text-[#FF4500] font-bold text-sm tracking-wider">2025.09.04-06 | JEJU</span>
                 </div>
                 <h2 className="text-2xl md:text-4xl font-bold text-white mb-2">
@@ -461,23 +495,43 @@ export default function Home() {
             {/* Footer Bottom */}
             <div className="flex flex-col md:flex-row justify-between items-center">
               <div className="mb-4 md:mb-0">
-                <Image
-                  src="/images/summit logo wh.png"
-                  alt="Climate Summit Logo"
-                  width={140}
-                  height={24}
-                  className="mb-2"
-                />
+                <div className="flex items-center gap-4 mb-2">
+                  <Image
+                    src="/images/summit logo wh.png"
+                    alt="Climate Summit Logo"
+                    width={140}
+                    height={24}
+                  />
+                  <Image
+                    src="/images/kakao-white.9938a19_1751608800882_cgvfo6.svg"
+                    alt="Kakao Impact"
+                    width={100}
+                    height={20}
+                    className="opacity-80 hover:opacity-100 transition-opacity"
+                  />
+                  <Image
+                    src="/images/sopoong-white.f482780_1751608800840_n2f92g.svg"
+                    alt="Sopoong Ventures"
+                    width={100}
+                    height={20}
+                    className="opacity-80 hover:opacity-100 transition-opacity"
+                  />
+                </div>
                 <p className="text-[#cecece] text-sm">
                   COPYRIGHT © CLIMATE NETWORK CORP ALL RIGHTS RESERVED
                 </p>
               </div>
-              <p className="text-[#cecece] text-sm">
-                {language === 'ko'
-                  ? '서울특별시 성동구 왕십리로2길 20, 카우앤독 4층'
-                  : '4th Floor, Cow&Dog, 20 Wangsimni-ro 2-gil, Seongdong-gu, Seoul'
-                }
-              </p>
+              <div className="text-right">
+                <p className="text-[#cecece] text-sm mb-1">
+                  이 홈페이지는 바이브코딩으로 만들어졌습니다
+                </p>
+                <p className="text-[#cecece] text-sm">
+                  {language === 'ko'
+                    ? '서울특별시 성동구 왕십리로2길 20, 카우앤독 4층'
+                    : '4th Floor, Cow&Dog, 20 Wangsimni-ro 2-gil, Seongdong-gu, Seoul'
+                  }
+                </p>
+              </div>
             </div>
           </div>
         </footer>
