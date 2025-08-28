@@ -236,7 +236,7 @@ export default function Speakers() {
               Speakers
             </motion.h2>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6 md:gap-8">
               {featuredSpeakers.map((speaker, index) => (
                 <motion.div
                   key={speaker.id}
@@ -247,7 +247,7 @@ export default function Speakers() {
                   className="text-center group cursor-pointer relative"
                 >
                   <div 
-                    className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 mx-auto mb-4 rounded-full overflow-hidden border-4 border-[#FF4500]/30 group-hover:border-[#FF4500] transition-colors cursor-pointer"
+                    className="relative w-28 h-28 sm:w-40 sm:h-40 md:w-48 md:h-48 mx-auto mb-3 rounded-full overflow-hidden border-4 border-[#FF4500]/30 group-hover:border-[#FF4500] transition-colors cursor-pointer"
                     onClick={() => openBioModal(speaker)}
                   >
                     {speaker.profileRound || speaker.profileImage ? (
@@ -282,7 +282,7 @@ export default function Speakers() {
                     )}
                   </div>
                   <div className="flex items-center justify-center gap-2 mb-2">
-                    <h3 className="text-xl font-bold text-white">{language === 'en' ? speaker.nameEn : speaker.name}</h3>
+                    <h3 className="text-lg sm:text-xl font-bold text-white">{language === 'en' ? speaker.nameEn : speaker.name}</h3>
                     {speaker.linkedin && (
                       <a
                         href={speaker.linkedin}
@@ -300,8 +300,8 @@ export default function Speakers() {
                       </a>
                     )}
                   </div>
-                  <p className="text-[#00CED1] mb-2">{language === 'en' ? speaker.companyEn : speaker.company}</p>
-                  <p className="text-[#cecece] text-sm mb-3">{language === 'en' ? speaker.positionEn : speaker.position}</p>
+                  <p className="text-[#00CED1] mb-1 text-sm sm:text-base">{language === 'en' ? speaker.companyEn : speaker.company}</p>
+                  <p className="text-[#cecece] text-xs sm:text-sm mb-2">{language === 'en' ? speaker.positionEn : speaker.position}</p>
                 </motion.div>
               ))}
             </div>

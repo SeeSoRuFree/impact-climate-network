@@ -535,7 +535,7 @@ export default function Program() {
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: 20 }}
                 transition={{ duration: 0.3 }}
-                className="bg-gradient-to-br from-[#1a1a1a] to-black border border-[#333] rounded-xl max-w-5xl w-full max-h-[85vh] overflow-hidden flex flex-col"
+                className="bg-gradient-to-br from-[#1a1a1a] to-black border border-[#333] rounded-xl max-w-5xl w-full max-h-[90vh] overflow-hidden flex flex-col"
                 onClick={(e) => e.stopPropagation()}
               >
                 {/* Modal Header */}
@@ -559,7 +559,7 @@ export default function Program() {
                 </div>
 
                 {/* Modal Content */}
-                <div className="p-6 overflow-y-auto flex-1">
+                <div className="p-6 pb-8 overflow-y-auto flex-1">
                   {/* Detailed Description */}
                   {selectedSession.detailedDescription && (
                     <div className="mb-8">
@@ -570,9 +570,9 @@ export default function Program() {
 
                   {/* Speakers */}
                   {selectedSession.speakers && selectedSession.speakers.length > 0 && (
-                    <div>
+                    <div className="mb-8">
                       <h3 className="text-xl font-bold text-white mb-6">연사진</h3>
-                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 pb-4">
                         {selectedSession.speakers.map((speaker: string | SpeakerType, idx: number) => {
                           // Handle both string and object speakers
                           const speakerName = typeof speaker === 'string' ? speaker : speaker.name;
@@ -582,7 +582,7 @@ export default function Program() {
                           return (
                             <div key={idx} className="flex flex-col items-center text-center group">
                               {/* Speaker Image */}
-                              <div className="w-24 h-24 mb-4 relative">
+                              <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 mb-3 relative">
                                 {speakerImage ? (
                                   <Image
                                     src={speakerImage}
@@ -601,9 +601,9 @@ export default function Program() {
                               </div>
                               
                               {/* Speaker Info */}
-                              <h4 className="text-white font-bold text-lg mb-1">{speakerName}</h4>
+                              <h4 className="text-white font-bold text-sm sm:text-base md:text-lg mb-1">{speakerName}</h4>
                               {speakerTitle && (
-                                <p className="text-[#00CED1] text-sm">{speakerTitle}</p>
+                                <p className="text-[#00CED1] text-xs sm:text-sm leading-tight">{speakerTitle}</p>
                               )}
                             </div>
                           );
