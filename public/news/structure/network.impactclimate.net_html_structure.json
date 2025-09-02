@@ -1,0 +1,47 @@
+{
+  "tagName": "body",
+  "className": "",
+  "id": "",
+  "attributes": {},
+  "content": "",
+  "textColor": "rgb(206, 206, 207)",
+  "backgroundColor": "rgb(255, 255, 255)",
+  "images": [],
+  "children": [
+    {
+      "tagName": "div",
+      "className": "",
+      "id": "__nuxt",
+      "attributes": {},
+      "content": "",
+      "textColor": "rgb(206, 206, 207)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "images": [],
+      "children": [
+        {
+          "tagName": "div",
+          "className": "",
+          "id": "__layout",
+          "attributes": {},
+          "content": "<div class=\"is-scrolled\"><nav class=\"nav-navbar-mobile\" data-v-05322794=\"\"><div class=\"nav-mobile-container\" data-v-05322794=\"\"><div class=\"w-100 text-center\" style=\"border: 1px solid #1d1d1f\" data-v-05322794=\"\"><div class=\"nav-container container position-relative\" data-v-05322794=\"\"><div class=\"d-flex justify-content-center align-items-center py-24 px-16 accordion-header w-100\" data-v-05322794=\"\"><div lang=\"ko-KR\" class=\"h4 color-primary\" data-v-05322794=\"\">MENU</div> <div style=\"position: absolute; top: calc(50% - 12px); right: 24px\" data-v-05322794=\"\"><i class=\"icon-tb-up h4 color-primary\" data-v-05322794=\"\"></i></div></div></div> <div class=\"accordion-content pt-0 pb-40 open\" data-v-05322794=\"\"><div class=\"pb-12\" data-v-05322794=\"\"><a href=\"/\" class=\"moblie-menu-link active\" data-v-05322794=\"\"></a></div><div class=\"pb-12\" data-v-05322794=\"\"><a href=\"/news\" class=\"moblie-menu-link active\" data-v-05322794=\"\"></a></div><div class=\"pb-12\" data-v-05322794=\"\"><a href=\"/contents\" class=\"moblie-menu-link\" data-v-05322794=\"\"></a></div><div class=\"pb-12\" data-v-05322794=\"\"><a href=\"/partners\" class=\"moblie-menu-link\" data-v-05322794=\"\"></a></div></div></div> <div class=\"w-100 text-center\" style=\"border: 1px solid #1d1d1f\" data-v-05322794=\"\"><div class=\"container position-relative\" data-v-05322794=\"\"><div class=\"d-flex justify-content-center align-items-center py-24 px-16 accordion-header w-100\" data-v-05322794=\"\"><div lang=\"ko-KR\" class=\"h4 color-primary\" data-v-05322794=\"\">PROGRAM</div> <div style=\"position: absolute; top: calc(50% - 12px); right: 24px\" data-v-05322794=\"\"><i class=\"icon-tb-down h4 color-primary\" data-v-05322794=\"\"></i></div></div></div> <div class=\"accordion-content pt-0 pb-20\" data-v-05322794=\"\"><div class=\"container\" data-v-05322794=\"\"><div class=\"row justify-content-center\" data-v-05322794=\"\"><div class=\"col-6 mb-24\" data-v-05322794=\"\"><a href=\"/program/monthly\" class=\"program-img-layout\" data-v-05322794=\"\"><div class=\"program-img bg-img\" data-v-05322794=\"\"><div class=\"program-logo-img\" data-v-05322794=\"\"><img src=\"/images/program/program-1.svg\" alt=\"\" data-v-05322794=\"\"></div></div> <div class=\"pt-8\" style=\"font-weight:500;\" data-v-05322794=\"\">월간클라이밋</div></a></div><div class=\"col-6 mb-24\" data-v-05322794=\"\"><a href=\"/program/climate\" class=\"program-img-layout\" data-v-05322794=\"\"><div class=\"program-img bg-img\" data-v-05322794=\"\"><div class=\"program-logo-img\" data-v-05322794=\"\"><img src=\"/images/program/program-2.svg\" alt=\"\" data-v-05322794=\"\"></div></div> <div class=\"pt-8\" style=\"font-weight:500;\" data-v-05322794=\"\">연례 기후서밋</div></a></div><div class=\"col-6 mb-24\" data-v-05322794=\"\"><a href=\"/program/press\" class=\"program-img-layout\" data-v-05322794=\"\"><div class=\"program-img bg-img\" data-v-05322794=\"\"><div class=\"program-logo-img\" data-v-05322794=\"\"><img src=\"/images/program/program-3.svg\" alt=\"\" data-v-05322794=\"\"></div></div> <div class=\"pt-8\" style=\"font-weight:500;\" data-v-05322794=\"\">기후테크 프레스데이</div></a></div><div class=\"col-6 mb-24\" data-v-05322794=\"\"><a href=\"/program/course\" class=\"program-img-layout\" data-v-05322794=\"\"><div class=\"program-img bg-img\" data-v-05322794=\"\"><div class=\"program-logo-img\" data-v-05322794=\"\"><img src=\"/images/program/program-4.svg\" alt=\"\" data-v-05322794=\"\"></div></div> <div class=\"pt-8\" style=\"font-weight:500;\" data-v-05322794=\"\">대학 기후기술 특강</div></a></div></div></div></div></div> <div class=\"w-100 text-center\" style=\"border: 1px solid #1d1d1f\" data-v-05322794=\"\"><div class=\"nav-container container position-relative\" data-v-05322794=\"\"><div class=\"d-flex justify-content-center align-items-center py-24 px-16 accordion-header w-100\" data-v-05322794=\"\"><div lang=\"ko-KR\" class=\"h4 color-primary\" data-v-05322794=\"\">FAMILIES</div> <div style=\"position: absolute; top: calc(50% - 12px); right: 24px\" data-v-05322794=\"\"><i class=\"icon-tb-down h4 color-primary\" data-v-05322794=\"\"></i></div></div></div> <div class=\"accordion-content pt-0 pb-40\" data-v-05322794=\"\"><div data-v-05322794=\"\"><a href=\"https://sopoong.net/?lang=ko-KR\" target=\"_blank\" exact=\"\" lang=\"ko-KR\" class=\"p-sm text-white\" data-v-05322794=\"\"><img src=\"/_nuxt/img/sopoong-white.f482780.svg\" alt=\"sopoong-logo\" class=\"w-100\" style=\"max-width: 80px\" data-v-05322794=\"\"></a></div> <div class=\"mt-20\" data-v-05322794=\"\"><a href=\"https://www.kakaoimpact.org/\" target=\"_blank\" exact=\"\" lang=\"ko-KR\" class=\"p-sm text-white\" data-v-05322794=\"\"><img src=\"/_nuxt/img/kakao-white.9938a19.svg\" alt=\"kakao-logo\" class=\"w-100\" style=\"max-width: 100px\" data-v-05322794=\"\"></a></div></div></div> <div class=\"nav-lang d-flex\" data-v-05322794=\"\"><!----></div> <div data-v-05322794=\"\"><!----></div></div></nav> <div class=\"nav fixed-top w-100\" data-v-37d03ed7=\"\"><nav class=\"nav-container container position-relative\" data-v-37d03ed7=\"\"><div class=\"nav-navbar d-flex align-items-center justify-content-between w-100\" data-v-37d03ed7=\"\"><a href=\"/\" class=\"logo-img active\" data-v-37d03ed7=\"\"><img src=\"/_nuxt/img/logo.62f53a9.svg\" alt=\"Ele...",
+          "textColor": "rgb(206, 206, 207)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "images": [
+            "https://network.impactclimate.net/images/program/program-1.svg",
+            "https://network.impactclimate.net/images/program/program-2.svg",
+            "https://network.impactclimate.net/images/program/program-3.svg",
+            "https://network.impactclimate.net/images/program/program-4.svg",
+            "https://network.impactclimate.net/_nuxt/img/sopoong-white.f482780.svg",
+            "https://network.impactclimate.net/_nuxt/img/kakao-white.9938a19.svg",
+            "https://network.impactclimate.net/_nuxt/img/logo.62f53a9.svg",
+            "https://network.impactclimate.net/images/common/network-word.svg",
+            "https://network.impactclimate.net/images/icon/facebook.svg",
+            "https://network.impactclimate.net/images/icon/linkedin.svg",
+            "https://network.impactclimate.net/images/icon/youtube.svg"
+          ],
+          "children": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,506 @@
+[
+  {
+    "className": "icon-tb-arrow-right",
+    "values": "content: \"\";"
+  },
+  {
+    "className": "icon-tb-down",
+    "values": "content: \"\";"
+  },
+  {
+    "className": "icon-tb-left",
+    "values": "content: \"\";"
+  },
+  {
+    "className": "icon-tb-right",
+    "values": "content: \"\";"
+  },
+  {
+    "className": "icon-tb-up",
+    "values": "content: \"\";"
+  },
+  {
+    "className": "h4",
+    "values": "margin-bottom: 0px; font-weight: 700; line-height: 1.2;"
+  },
+  {
+    "className": "display-3",
+    "values": "font-weight: 700; line-height: 1.125;"
+  },
+  {
+    "className": "list-unstyled",
+    "values": "padding-left: 0px; list-style: none;"
+  },
+  {
+    "className": "container",
+    "values": "width: 100%; padding-right: 14px; padding-left: 14px; margin-right: auto; margin-left: auto;"
+  },
+  {
+    "className": "row",
+    "values": "display: flex; flex-wrap: wrap; margin-right: -14px; margin-left: -14px;"
+  },
+  {
+    "className": "col-3",
+    "values": "position: relative; width: 100%; padding-right: 14px; padding-left: 14px;"
+  },
+  {
+    "className": "col-6",
+    "values": "position: relative; width: 100%; padding-right: 14px; padding-left: 14px;"
+  },
+  {
+    "className": "col-9",
+    "values": "position: relative; width: 100%; padding-right: 14px; padding-left: 14px;"
+  },
+  {
+    "className": "col-12",
+    "values": "position: relative; width: 100%; padding-right: 14px; padding-left: 14px;"
+  },
+  {
+    "className": "col-lg-2",
+    "values": "position: relative; width: 100%; padding-right: 14px; padding-left: 14px;"
+  },
+  {
+    "className": "col-lg-3",
+    "values": "position: relative; width: 100%; padding-right: 14px; padding-left: 14px;"
+  },
+  {
+    "className": "col-lg-7",
+    "values": "position: relative; width: 100%; padding-right: 14px; padding-left: 14px;"
+  },
+  {
+    "className": "col-md-12",
+    "values": "position: relative; width: 100%; padding-right: 14px; padding-left: 14px;"
+  },
+  {
+    "className": "col-xl-5",
+    "values": "position: relative; width: 100%; padding-right: 14px; padding-left: 14px;"
+  },
+  {
+    "className": "col-xl-6",
+    "values": "position: relative; width: 100%; padding-right: 14px; padding-left: 14px;"
+  },
+  {
+    "className": "form-control",
+    "values": "display: block; width: 100%; height: calc(1.1765em + 22px); padding: 10px 2rem; font-size: 17px; font-weight: 400; line-height: 1.1765; color: rgb(206, 206, 207); background-color: rgb(255, 255, 255); background-clip: padding-box; border: 1px solid rgb(228, 230, 238); border-radius: 0px; transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;"
+  },
+  {
+    "className": "form-group",
+    "values": "margin-bottom: 1rem;"
+  },
+  {
+    "className": "btn",
+    "values": "display: inline-block; color: rgb(206, 206, 207); text-align: center; vertical-align: middle; user-select: none; background-color: transparent; border: 1px solid transparent; padding: 9px 36px; font-size: 17px; line-height: 1.1765; border-radius: 0px; transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;"
+  },
+  {
+    "className": "disabled",
+    "values": "opacity: 0.7;"
+  },
+  {
+    "className": "btn-link",
+    "values": "font-weight: 400; text-decoration: none;"
+  },
+  {
+    "className": "btn-block",
+    "values": "display: block; width: 100%;"
+  },
+  {
+    "className": "active",
+    "values": "color: rgb(19, 19, 20); text-decoration: none; background-color: rgb(228, 230, 238);"
+  },
+  {
+    "className": "nav",
+    "values": "display: flex; flex-wrap: wrap; padding-left: 0px; margin-bottom: 0px; list-style: none;"
+  },
+  {
+    "className": "pagination",
+    "values": "display: flex; padding-left: 0px; list-style: none; border-radius: 0px;"
+  },
+  {
+    "className": "page-link",
+    "values": "position: relative; display: block; padding: 8px 12px; margin-left: -1px; line-height: 1; color: rgb(0, 0, 0); font-family: Rift;"
+  },
+  {
+    "className": "page-item",
+    "values": "margin-left: 0px; border-top-left-radius: 0px; border-bottom-left-radius: 0px;"
+  },
+  {
+    "className": "pagination-lg",
+    "values": "padding: 12px 24px; font-size: 21px; line-height: 1.52632;"
+  },
+  {
+    "className": "bg-third",
+    "values": "background-color: rgb(0, 0, 0) !important;"
+  },
+  {
+    "className": "border",
+    "values": "border: 1px solid rgb(228, 230, 238) !important;"
+  },
+  {
+    "className": "rounded-lg",
+    "values": "border-radius: 47px !important;"
+  },
+  {
+    "className": "d-none",
+    "values": "display: none !important;"
+  },
+  {
+    "className": "d-block",
+    "values": "display: block !important;"
+  },
+  {
+    "className": "d-flex",
+    "values": "display: flex !important;"
+  },
+  {
+    "className": "justify-content-center",
+    "values": "justify-content: center !important;"
+  },
+  {
+    "className": "justify-content-between",
+    "values": "justify-content: space-between !important;"
+  },
+  {
+    "className": "align-items-center",
+    "values": "align-items: center !important;"
+  },
+  {
+    "className": "align-items-stretch",
+    "values": "align-items: stretch !important;"
+  },
+  {
+    "className": "position-relative",
+    "values": "position: relative !important;"
+  },
+  {
+    "className": "position-absolute",
+    "values": "position: absolute !important;"
+  },
+  {
+    "className": "fixed-top",
+    "values": "top: 0px;"
+  },
+  {
+    "className": "w-100",
+    "values": "width: 100% !important;"
+  },
+  {
+    "className": "m-0",
+    "values": "margin: 0px !important;"
+  },
+  {
+    "className": "mb-0",
+    "values": "margin-bottom: 0px !important;"
+  },
+  {
+    "className": "mr-8",
+    "values": "margin-right: 8px !important;"
+  },
+  {
+    "className": "mb-10",
+    "values": "margin-bottom: 10px !important;"
+  },
+  {
+    "className": "mb-12",
+    "values": "margin-bottom: 12px !important;"
+  },
+  {
+    "className": "mt-20",
+    "values": "margin-top: 20px !important;"
+  },
+  {
+    "className": "mb-20",
+    "values": "margin-bottom: 20px !important;"
+  },
+  {
+    "className": "my-24",
+    "values": "margin-top: 24px !important;"
+  },
+  {
+    "className": "mb-24",
+    "values": "margin-bottom: 24px !important;"
+  },
+  {
+    "className": "mr-30",
+    "values": "margin-right: 30px !important;"
+  },
+  {
+    "className": "mt-100",
+    "values": "margin-top: 100px !important;"
+  },
+  {
+    "className": "pt-0",
+    "values": "padding-top: 0px !important;"
+  },
+  {
+    "className": "px-0",
+    "values": "padding-right: 0px !important;"
+  },
+  {
+    "className": "pl-4",
+    "values": "padding-left: 4px !important;"
+  },
+  {
+    "className": "pt-8",
+    "values": "padding-top: 8px !important;"
+  },
+  {
+    "className": "pt-12",
+    "values": "padding-top: 12px !important;"
+  },
+  {
+    "className": "pb-12",
+    "values": "padding-bottom: 12px !important;"
+  },
+  {
+    "className": "px-16",
+    "values": "padding-right: 16px !important;"
+  },
+  {
+    "className": "pb-16",
+    "values": "padding-bottom: 16px !important;"
+  },
+  {
+    "className": "pt-20",
+    "values": "padding-top: 20px !important;"
+  },
+  {
+    "className": "pb-20",
+    "values": "padding-bottom: 20px !important;"
+  },
+  {
+    "className": "py-24",
+    "values": "padding-top: 24px !important;"
+  },
+  {
+    "className": "pt-28",
+    "values": "padding-top: 28px !important;"
+  },
+  {
+    "className": "pb-36",
+    "values": "padding-bottom: 36px !important;"
+  },
+  {
+    "className": "pb-40",
+    "values": "padding-bottom: 40px !important;"
+  },
+  {
+    "className": "pt-60",
+    "values": "padding-top: 60px !important;"
+  },
+  {
+    "className": "pb-60",
+    "values": "padding-bottom: 60px !important;"
+  },
+  {
+    "className": "pt-80",
+    "values": "padding-top: 80px !important;"
+  },
+  {
+    "className": "text-center",
+    "values": "text-align: center !important;"
+  },
+  {
+    "className": "font-weight-bold",
+    "values": "font-weight: 700 !important;"
+  },
+  {
+    "className": "text-white",
+    "values": "color: rgb(255, 255, 255) !important;"
+  },
+  {
+    "className": "p-sm",
+    "values": "font-size: 14px; line-height: 1.71429;"
+  },
+  {
+    "className": "p-lg",
+    "values": "font-size: 19px; line-height: 1.52632; font-weight: 500;"
+  },
+  {
+    "className": "fw-400",
+    "values": "font-weight: 400;"
+  },
+  {
+    "className": "fw-500",
+    "values": "font-weight: 500;"
+  },
+  {
+    "className": "color-primary",
+    "values": "color: rgb(50, 88, 238);"
+  },
+  {
+    "className": "color-base-white",
+    "values": "color: rgb(255, 255, 255);"
+  },
+  {
+    "className": "btn-primary",
+    "values": "color: rgb(255, 255, 255); background-color: rgb(50, 88, 238); border-color: rgb(50, 88, 238);"
+  },
+  {
+    "className": "title",
+    "values": "color: rgb(255, 255, 255);"
+  },
+  {
+    "className": "contents",
+    "values": "text-overflow: ellipsis; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical;"
+  },
+  {
+    "className": "accordion-header",
+    "values": "cursor: pointer;"
+  },
+  {
+    "className": "accordion-content",
+    "values": "display: none; padding: 20px 40px; overflow: hidden; transition: 0.5s;"
+  },
+  {
+    "className": "open",
+    "values": "display: block;"
+  },
+  {
+    "className": "bg-img",
+    "values": "background-size: cover; background-position: 50% center; background-repeat: no-repeat;"
+  },
+  {
+    "className": "nav-navbar-mobile",
+    "values": "position: fixed; top: 0px; left: 0px; z-index: 1029; height: 100vh; width: 100%; pointer-events: none; transition: 0.3s; transform: translateX(100%);"
+  },
+  {
+    "className": "nav-mobile-container",
+    "values": "position: relative; background: rgb(0, 0, 0); padding-top: 80px; padding-bottom: 30px; height: 100%; overflow-y: auto; display: flex; align-items: center; flex-direction: column;"
+  },
+  {
+    "className": "nav-menu",
+    "values": "margin: 30px 0px;"
+  },
+  {
+    "className": "nav-lang",
+    "values": "justify-content: center; margin-top: 60px;"
+  },
+  {
+    "className": "program-img-layout",
+    "values": "cursor: pointer;"
+  },
+  {
+    "className": "program-img",
+    "values": "position: relative; padding-bottom: 57.1429%; background-color: rgb(255, 255, 255);"
+  },
+  {
+    "className": "program-logo-img",
+    "values": "position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;"
+  },
+  {
+    "className": "is-scrolled",
+    "values": "display: none;"
+  },
+  {
+    "className": "nav-container",
+    "values": "display: none;"
+  },
+  {
+    "className": "nav-navbar",
+    "values": "min-height: 80px;"
+  },
+  {
+    "className": "submenu",
+    "values": "display: block;"
+  },
+  {
+    "className": "nuxt-link-exact-active",
+    "values": "color: rgb(50, 88, 238);"
+  },
+  {
+    "className": "nav-btn-toggle",
+    "values": "transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1); width: 45px; height: 45px; padding: 10px; border-radius: 50%; display: flex; flex-flow: column wrap; justify-content: space-around;"
+  },
+  {
+    "className": "bar",
+    "values": "transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1); width: 22px; height: 2px; background-color: rgb(255, 255, 255); display: block; margin: 0px auto; line-height: 1;"
+  },
+  {
+    "className": "menu-content-btn",
+    "values": "transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);"
+  },
+  {
+    "className": "menu-content-layout",
+    "values": "transform: translateY(0px);"
+  },
+  {
+    "className": "menu-content",
+    "values": "padding: 40px 0px; display: flex; justify-content: space-between;"
+  },
+  {
+    "className": "menu-title",
+    "values": "font-size: 21px; font-weight: 700; color: rgb(50, 88, 238); padding-bottom: 20px;"
+  },
+  {
+    "className": "menu",
+    "values": "font-size: 14px; font-weight: 500; padding-bottom: 27px;"
+  },
+  {
+    "className": "back-border-layout",
+    "values": "inset: 0px; position: absolute; z-index: 0; height: 100%; width: 100%; max-width: 1200px; margin: 0px auto;"
+  },
+  {
+    "className": "back-border-contents",
+    "values": "display: contents; height: 100%;"
+  },
+  {
+    "className": "back-border-container",
+    "values": "margin: 0px 10px; border-left: 1px solid rgb(29, 29, 31); height: 100%; display: flex; align-items: center; flex-flow: row; overflow: hidden;"
+  },
+  {
+    "className": "back-border",
+    "values": "border-right: 1px solid rgb(29, 29, 31); flex: 1 0 0px; height: 100%; overflow: hidden; position: relative; width: 1px;"
+  },
+  {
+    "className": "lottie-img",
+    "values": "position: relative;"
+  },
+  {
+    "className": "sp-card",
+    "values": "position: relative;"
+  },
+  {
+    "className": "thumb-img-wrap",
+    "values": "position: relative; overflow: hidden;"
+  },
+  {
+    "className": "thumb-img",
+    "values": "transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); transform: scale(1.1); background-color: rgb(228, 230, 238); background-size: cover; background-position: 50% center; background-repeat: no-repeat;"
+  },
+  {
+    "className": "type2",
+    "values": "color: rgb(0, 0, 0);"
+  },
+  {
+    "className": "description",
+    "values": "-webkit-line-clamp: 3;"
+  },
+  {
+    "className": "newspaper",
+    "values": "font-size: 12px;"
+  },
+  {
+    "className": "item_next",
+    "values": "font-size: inherit;"
+  },
+  {
+    "className": "item_prev",
+    "values": "font-size: inherit;"
+  },
+  {
+    "className": "page-icon",
+    "values": "color: rgb(50, 88, 238);"
+  },
+  {
+    "className": "footer-logo",
+    "values": "max-width: 160px; height: 60px;"
+  },
+  {
+    "className": "footer-menu-container",
+    "values": "display: flex; flex-wrap: wrap; justify-content: space-between;"
+  },
+  {
+    "className": "footer-subscribe",
+    "values": "width: 100%;"
+  }
+]
